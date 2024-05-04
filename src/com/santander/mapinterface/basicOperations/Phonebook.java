@@ -14,16 +14,17 @@ public class Phonebook {
     }
 
     public void removeContact(String name) {
-        this.phonebook.remove(name);
+        if(!this.phonebook.isEmpty()) this.phonebook.remove(name);
     }
 
     public void showAll() {
-        System.out.println(this.phonebook.values());
+        System.out.println(this.phonebook);
     }
 
     public void searchByName(String name) {
         String value = null;
         if(this.phonebook.containsKey(name)) value = this.phonebook.get(name);
+        else System.out.println("No contacts with this name.");
         if(value != null) System.out.println(name + ": " + value);
     }
 }

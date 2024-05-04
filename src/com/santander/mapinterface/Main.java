@@ -15,6 +15,8 @@ public class Main {
         phonebook.addContact("Lewa", "11 84398439843");
         phonebook.addContact("Kaya", "11 09212120321");
         phonebook.searchByName("Kaya");
+        System.out.println("\n--- phonebook show all ---");
+        phonebook.showAll();
     }
 
     public static void testDictionary() {
