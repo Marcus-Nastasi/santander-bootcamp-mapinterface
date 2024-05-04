@@ -5,11 +5,12 @@ import com.santander.mapinterface.basicOperations.Phonebook;
 
 public class Main {
     public static void main(String[] args) {
-        //testPhonebook();
+        testPhonebook();
         testDictionary();
     }
 
     public static void testPhonebook() {
+        System.out.println("\n--- Phonebook ---");
         Phonebook phonebook = new Phonebook();
         phonebook.addContact("Lewa", "11 84398439843");
         phonebook.addContact("Kaya", "11 09212120321");
@@ -17,12 +18,14 @@ public class Main {
     }
 
     public static void testDictionary() {
+        System.out.println("\n--- Dictionary ---");
         Dictionary dictionary = new Dictionary();
         dictionary.addWord("Apple", "It's a fruit.");
         dictionary.addWord("Dog", "A canine kind of life.");
         dictionary.addWord("Cat", "A feline kind of life.");
-        String catDef = dictionary.getDefinition("Cat");
-        System.out.println(catDef);
+        System.out.println(dictionary.getDefinition("Cat"));
+        System.out.println(dictionary.getDefinition("Dog"));
+        System.out.println(dictionary.getDefinition("Apple"));
     }
 }
 

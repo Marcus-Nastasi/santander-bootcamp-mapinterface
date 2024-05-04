@@ -18,7 +18,7 @@ public class Dictionary {
     }
 
     public String getDefinition(String word) {
-        return this.dictionary.get(word);
+        return word + ": " + this.dictionary.get(word);
     }
 }
 
