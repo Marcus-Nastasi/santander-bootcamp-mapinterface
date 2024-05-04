@@ -2,11 +2,13 @@ package com.santander.mapinterface;
 
 import com.santander.mapinterface.basicOperations.Dictionary;
 import com.santander.mapinterface.basicOperations.Phonebook;
+import com.santander.mapinterface.searchMap.Stock;
 
 public class Main {
     public static void main(String[] args) {
-        testPhonebook();
-        testDictionary();
+        //testPhonebook();
+        //testDictionary();
+        testStock();
     }
 
     public static void testPhonebook() {
@@ -28,6 +30,16 @@ public class Main {
         System.out.println(dictionary.getDefinition("Cat"));
         System.out.println(dictionary.getDefinition("Dog"));
         System.out.println(dictionary.getDefinition("Apple"));
+    }
+
+    public static void testStock() {
+        Stock stock = new Stock();
+        stock.addProduct(1, "Apple", 1, 1.99);
+        stock.addProduct(2, "Banana", 1, 2.20);
+        System.out.println("\n--- Stock ---");
+        stock.showAll();
+        stock.totalValue();
+        stock.getExpensiver();
     }
 }
 
