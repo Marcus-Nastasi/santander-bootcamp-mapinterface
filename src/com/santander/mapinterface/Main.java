@@ -2,13 +2,21 @@ package com.santander.mapinterface;
 
 import com.santander.mapinterface.basicOperations.Dictionary;
 import com.santander.mapinterface.basicOperations.Phonebook;
+import com.santander.mapinterface.ordenation.EventBook;
 import com.santander.mapinterface.searchMap.Stock;
+
+import java.text.ParseException;
 
 public class Main {
     public static void main(String[] args) {
-        //testPhonebook();
-        //testDictionary();
-        testStock();
+        try {
+            //testPhonebook();
+            //testDictionary();
+            //testStock();
+            testEvent();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public static void testPhonebook() {
@@ -40,6 +48,16 @@ public class Main {
         stock.showAll();
         System.out.println(stock.totalValue());
         System.out.println(stock.getExpensiver());
+    }
+
+    public static void testEvent() throws ParseException {
+        EventBook eventBook = new EventBook();
+        eventBook.addEvent("10/01/2024", "Kendrick Lamar", "Kendrick Lamar's show");
+        eventBook.addEvent("12/02/2024", "Pharel", "Pharel's show");
+        eventBook.addEvent("12/05/2024", "New Ev", "New Ev's show");
+        eventBook.addEvent("13/05/2024", "New New", "New New show");
+        eventBook.showAll();
+        System.out.println(eventBook.nextEvent());
     }
 }
 

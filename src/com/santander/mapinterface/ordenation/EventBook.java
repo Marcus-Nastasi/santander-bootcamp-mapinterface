@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class EventBook {
 
@@ -18,7 +19,19 @@ public class EventBook {
     }
 
     public void showAll() {
-        System.out.println(this.eventBook);
+        Map<Date, Event> dateEventMap = new TreeMap<>(this.eventBook);
+        System.out.println(dateEventMap);
+    }
+
+    public Event nextEvent() {
+        Date date = new Date();
+        Event nextEvent = null;
+        Map<Date, Event> dateEventMap = new TreeMap<>(this.eventBook);
+        for(Date d: dateEventMap.keySet()) if(d.after(date)) {
+            nextEvent = this.eventBook.get(d);
+            break;
+        }
+        return nextEvent;
     }
 }
 
