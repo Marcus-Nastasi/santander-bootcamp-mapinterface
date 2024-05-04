@@ -38,8 +38,8 @@ public class Main {
         stock.addProduct(2, "Banana", 1, 2.20);
         System.out.println("\n--- Stock ---");
         stock.showAll();
-        stock.totalValue();
-        stock.getExpensiver();
+        System.out.println(stock.totalValue());
+        System.out.println(stock.getExpensiver());
     }
 }
 
