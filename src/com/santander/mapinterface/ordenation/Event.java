@@ -2,8 +2,8 @@ package com.santander.mapinterface.ordenation;
 
 public class Event {
 
-    private String eventName;
-    private String description;
+    private final String eventName;
+    private final String description;
 
     public Event(String eventName, String description) {
         this.eventName = eventName;
