@@ -10,9 +10,9 @@ import java.text.ParseException;
 public class Main {
     public static void main(String[] args) {
         try {
-            //testPhonebook();
-            //testDictionary();
-            //testStock();
+            testPhonebook();
+            testDictionary();
+            testStock();
             testEvent();
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -51,6 +51,7 @@ public class Main {
     }
 
     public static void testEvent() throws ParseException {
+        System.out.println("\n--- Event ---");
         EventBook eventBook = new EventBook();
         eventBook.addEvent("10/01/2024", "Kendrick Lamar", "Kendrick Lamar's show");
         eventBook.addEvent("12/02/2024", "Pharel", "Pharel's show");
