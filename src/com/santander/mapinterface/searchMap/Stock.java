@@ -17,5 +17,23 @@ public class Stock {
         System.out.println(this.productStock);
     }
 
+    public double totalValue() throws RuntimeException {
+        if(this.productStock.isEmpty()) throw new RuntimeException("Empty stock");
+        double totalValue = 0.0;
+        for(Product p: this.productStock.values()) totalValue += (p.getQuantity() * p.getPrice());
+        return totalValue;
+    }
 
+    public Product getExpensiver() throws RuntimeException {
+        if(this.productStock.isEmpty()) throw new RuntimeException("Empty stock");
+        Product product = null;
+        double value = 0.0;
+        for(Product p: this.productStock.values()) if(p.getPrice() > value) {
+            value = p.getPrice();
+            product = p;
+        }
+        return product;
+    }
 }
+
+
