@@ -2,10 +2,10 @@ package com.santander.mapinterface.searchMap;
 
 public class Product {
 
-    private int id;
-    private String name;
-    private int quantity;
-    private double price;
+    private final int id;
+    private final String name;
+    private final int quantity;
+    private final double price;
 
     public Product(int id, String name, int quantity, double price) {
         this.id = id;
