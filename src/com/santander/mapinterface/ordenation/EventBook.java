@@ -18,12 +18,14 @@ public class EventBook {
         this.eventBook.put(sdf.parse(date), new Event(name, description));
     }
 
-    public void showAll() {
+    public void showAll() throws RuntimeException {
+        if(this.eventBook.isEmpty()) throw new RuntimeException("Event book empty.");
         Map<Date, Event> dateEventMap = new TreeMap<>(this.eventBook);
         System.out.println(dateEventMap);
     }
 
-    public Event nextEvent() {
+    public Event nextEvent() throws RuntimeException {
+        if(this.eventBook.isEmpty()) throw new RuntimeException("Event book empty.");
         Date date = new Date();
         Event nextEvent = null;
         Map<Date, Event> dateEventMap = new TreeMap<>(this.eventBook);
