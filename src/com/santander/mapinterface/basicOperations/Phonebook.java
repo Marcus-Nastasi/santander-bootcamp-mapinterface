@@ -13,15 +13,18 @@ public class Phonebook {
         this.phonebook.put(name, number);
     }
 
-    public void removeContact(String name) {
-        if(!this.phonebook.isEmpty()) this.phonebook.remove(name);
+    public void removeContact(String name) throws RuntimeException {
+        if(this.phonebook.isEmpty()) throw new RuntimeException("Empty phonebook");
+        this.phonebook.remove(name);
     }
 
-    public void showAll() {
+    public void showAll() throws RuntimeException {
+        if(this.phonebook.isEmpty()) throw new RuntimeException("Empty phonebook");
         System.out.println(this.phonebook);
     }
 
-    public void searchByName(String name) {
+    public void searchByName(String name) throws RuntimeException {
+        if(this.phonebook.isEmpty()) throw new RuntimeException("Empty phonebook");
         String value = null;
         if(this.phonebook.containsKey(name)) value = this.phonebook.get(name);
         else System.out.println("No contacts with this name.");
